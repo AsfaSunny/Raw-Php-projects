@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>PHP Contact Form</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+</head>
+<body>
+	<div class="wrapper">
+		<header>Send A Message</header>
+		<form action="">
+			<div class="double-field">
+				<div class="field">
+					<input type="text" name="name" placeholder="Enter Your Name">
+					<i class="fas fa-user"></i>
+				</div>
+
+				<div class="field">
+					<input type="text" name="email" placeholder="Enter Your Email">
+					<i class="fas fa-envelope"></i>
+				</div>
+			</div>
+
+			<div class="double-field">
+				<div class="field">
+					<input type="text" name="phone" placeholder="Enter Your Phone">
+					<i class="fas fa-phone-alt"></i>
+				</div>
+
+				<div class="field">
+					<input type="text" name="websites" placeholder="Enter Your Website">
+					<i class="fas fa-globe"></i>
+				</div>
+			</div>
+
+			<div class="message">
+				<textarea name="msg" placeholder="Write Message..."></textarea>
+				<i class="material-icons">message</i>
+			</div>
+
+			<div class="button-area">
+				<button type="submit">Send Message</button>
+				<span>Sending Message..</span>
+			</div>
+
+		</form>
+	</div>
+
+<script src="main.js"></script>
+</body>
+</html>
