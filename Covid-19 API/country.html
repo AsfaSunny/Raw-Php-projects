@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Countries Data</title>
+	<style>
+		*{
+			color: rebeccapurple;
+		}
+
+		h1{
+			font-size: 30px;
+		}
+
+		td{
+			background: AliceBlue;
+		}
+
+		th{
+			background: NavajoWhite;
+		}
+	</style>
+</head>
+<body>
+	<table border="1px" cellspacing="0" style="border: 2px solid orangered;" cellpadding="25px">
+		<tr>
+			<td colspan="9"><h1>Countries Data</h2></td>
+		</tr>
+		<tr>
+			<th>Country S.L.</th>
+			<th>Country</th>
+			<th>Country Code</th>
+			<th>New Confirmed</th>
+			<th>New Deaths</th>
+			<th>New Recovered</th>
+			<th>Total Confirmed</th>
+			<th>Total Deaths</th>
+			<th>Total Recovered</th>
+		</tr>
+		<tbody id="country-wise"></tbody>
+	</table>
+
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+	<script type="text/javascript">
+		$.ajax({
+			url : "https://api.covid19api.com/summary",
+			type : "GET",
+			dataType : "JSON",
+			success : function(data){
+				console.log(data.Countries[107]);
+
+				var serial = 1;
+				$.each(data.Countries, function(key, value){
+					$("#country-wise").append("<tr>" + 
+						"<td>" + serial + "</td>" + 
+						"<td>" + value.Country + "</td>" + 
+						"<td>" + value.CountryCode + "</td>" + 
+						"<td>" + value.NewConfirmed + "</td>" + 
+						"<td>" + value.NewDeaths + "</td>" + 
+						"<td>" + value.NewRecovered + "</td>" + 
+						"<td>" + value.TotalConfirmed + "</td>" + 
+						"<td>" + value.TotalDeaths + "</td>" + 
+						"<td>" + value.TotalRecovered + "</td>" + 
+						"</tr>");
+
+					serial++;
+				});
+			}
+		});
+	</script>
+</body>
+</html>
